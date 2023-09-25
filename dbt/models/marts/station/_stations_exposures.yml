@@ -1,0 +1,15 @@
+version: 2
+
+exposures:
+  - name: velib_reporing
+    label: Dashboard Velib reporting
+    type: dashboard
+    maturity: high
+    url: https://superset.apache.org/
+    description: > 
+        Dashboard analysis of open data on velib' in Paris 
+    depends_on:
+      - ref('stations_history')
+    owner:
+      name: Pablo Farey
+      email: pfarey@ippon.fr

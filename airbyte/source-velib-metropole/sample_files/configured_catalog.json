@@ -1,0 +1,117 @@
+{
+    "streams": [
+        {
+            "sync_mode": "full_refresh",
+            "destination_sync_mode": "overwrite",
+            "stream": {
+                "name": "station_information",
+                "json_schema": {
+                    "type": "object",
+                    "properties": {
+                        "lastUpdatedOther": {
+                            "type": "number"
+                        },
+                        "ttl": {
+                            "type": "number"
+                        },
+                        "stationCode": {
+                            "type": "string"
+                        },
+                        "station_id": {
+                            "type": "integer"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "lon": {
+                            "type": "number"
+                        },
+                        "lat": {
+                            "type": "number"
+                        },
+                        "capacity": {
+                            "type": "integer"
+                        },
+                        "rental_methods": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "supported_sync_modes": [
+                    "full_refresh"
+                ],
+                "source_defined_primary_key": [
+                    [
+                        "station_id"
+                    ]
+                ],
+                "source_defined_cursor": false
+            }
+        },
+        {
+            "sync_mode": "full_refresh",
+            "destination_sync_mode": "overwrite",
+            "stream": {
+                "name": "station_status",
+                "json_schema": {
+                    "type": "object",
+                    "properties": {
+                        "lastUpdatedOther": {
+                            "type": "number"
+                        },
+                        "ttl": {
+                            "type": "number"
+                        },
+                        "stationCode": {
+                            "type": "string"
+                        },
+                        "station_id": {
+                            "type": "integer"
+                        },
+                        "num_bikes_available": {
+                            "type": "integer"
+                        },
+                        "numBikesAvailable": {
+                            "type": "integer"
+                        },
+                        "num_bikes_available_types": {
+                            "type": "array",
+                            "items": {}
+                        },
+                        "num_docks_available": {
+                            "type": "integer"
+                        },
+                        "numDocksAvailable": {
+                            "type": "integer"
+                        },
+                        "is_installed": {
+                            "type": "integer"
+                        },
+                        "is_returning": {
+                            "type": "integer"
+                        },
+                        "is_renting": {
+                            "type": "integer"
+                        },
+                        "last_reported": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "supported_sync_modes": [
+                    "full_refresh",
+                    "incremental"
+                ],
+                "source_defined_primary_key": [
+                    [
+                        "station_id"
+                    ]
+                ],
+                "source_defined_cursor": false
+            }
+        }
+    ]
+}

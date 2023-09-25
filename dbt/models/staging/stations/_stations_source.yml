@@ -1,0 +1,14 @@
+
+version: 2
+
+sources:
+  - name: datacademie
+    description: Schema where raw data are loaded from airbyte 
+    tables:
+      - name: raw_stations_informations
+        description: >
+          Table containing all time-stable information about the station, such as its position, capacity, etc. 
+      - name: raw_stations_status
+        description: >
+          Table containing all status information about the station, 
+          such as the number of available bikes, whether the station is active or not, etc. 

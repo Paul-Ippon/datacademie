@@ -1,0 +1,95 @@
+version: 2
+
+models:
+  - name: fact_stations_status
+    description: Table of facts describing the different status of the stations
+    columns:
+      - name: station_id
+        description: '{{ doc("station_id")}}'
+        tests:
+            - not_null
+            - unique
+      - name: station_code
+        description: '{{ doc("station_code")}}'
+        tests:
+            - not_null
+      - name: is_installed
+        description: '{{ doc("is_installed")}}'
+      - name: is_renting
+        description: '{{ doc("is_renting")}}'
+      - name: is_returning
+        description: '{{ doc("is_returning")}}'
+      - name: num_bikes_available
+        description: '{{ doc("num_bikes_available")}}'
+      - name: num_bikes_available_types
+        description: '{{ doc("num_bikes_available_types")}}'
+      - name: num_docks_available
+        description: '{{ doc("num_docks_available")}}'
+      - name: last_updated_station_status
+        description: '{{ doc("last_updated_station_status")}}'
+      - name: last_updated_refresh
+        description: '{{ doc("last_updated_refresh")}}'
+
+
+  - name: dim_stations_informations
+    description: Dimension table that describes the information about the stations
+    columns:
+      - name: station_id
+        description: '{{ doc("station_id")}}'
+        tests:
+            - not_null
+            - unique
+      - name: station_code
+        description: '{{ doc("station_code")}}'
+        tests:
+            - not_null
+      - name: name
+        description: '{{ doc("name")}}'
+      - name: latitude
+        description: '{{ doc("latitude")}}'
+      - name: longitude
+        description: '{{ doc("longitude")}}'
+      - name : capacity
+        description: '{{ doc("capacity")}}'
+      - name: rental_methods
+        description: '{{ doc("rental_methods")}}'
+      - name: last_updated_refresh
+        description: '{{ doc("last_updated_refresh")}}'
+
+
+  - name: stations
+    description: Aggregation of all informations to describe all stations
+    columns:
+      - name: station_id
+        description: '{{ doc("station_id")}}'
+        tests:
+            - not_null
+            - unique
+      - name: station_code
+        description: '{{ doc("station_code")}}'
+        tests:
+            - not_null
+      - name: name
+        description: '{{ doc("name")}}'
+      - name: latitude
+        description: '{{ doc("latitude")}}'
+      - name: longitude
+        description: '{{ doc("longitude")}}'
+      - name : capacity
+        description: '{{ doc("capacity")}}'
+      - name: rental_methods
+        description: '{{ doc("rental_methods")}}'
+      - name: is_installed
+        description: '{{ doc("is_installed")}}'
+      - name: is_renting
+        description: '{{ doc("is_renting")}}'
+      - name: is_returning
+        description: '{{ doc("is_returning")}}'
+      - name: num_bikes_available
+        description: '{{ doc("num_bikes_available")}}'
+      - name: num_bikes_available_types
+        description: '{{ doc("num_bikes_available_types")}}'
+      - name: num_docks_available
+        description: '{{ doc("num_docks_available")}}'
+      - name: last_updated_station_status
+        description: '{{ doc("last_updated_station_status")}}'
